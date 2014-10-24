@@ -28,7 +28,10 @@ def pdftotext(env)
 
   system(*command)
 
-  [200, {'Content-Type' => "text/plain"}, [text.read]]
+  [200, {
+    'Access-Control-Allow-Origin' => "*",
+    'Content-Type' => "text/plain"
+  }, [text.read]]
 ensure
   pdf.close if pdf
   text.close if text
