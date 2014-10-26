@@ -1,8 +1,8 @@
 Form W-4 (2014)
 Purpose. Complete Form W-4 so that your employer can withhold the correct federal income tax from your pay. Consider completing a new Form W-4 each year and when your personal or financial situation changes. Exemption from withholding. If you are exempt, complete only lines 1, 2, 3, 4, and 7 and sign the form to validate it. Your exemption for 2014 expires February 17, 2015. See Pub. 505, Tax Withholding and Estimated Tax. Note. If another person can claim you as a dependent on his or her tax return, you cannot claim exemption from withholding if your income exceeds $1,000 and includes more than $350 of unearned income (for example, interest and dividends).
-Exceptions. An employee may be able to claim exemption from withholding even if the employee is a dependent, if the employee: · Is age 65 or older,
-· Is blind, or
-· Will claim adjustments to income; tax credits; or itemized deductions, on his or her tax return.
+Exceptions. An employee may be able to claim exemption from withholding even if the employee is a dependent, if the employee:  Is age 65 or older,
+ Is blind, or
+ Will claim adjustments to income; tax credits; or itemized deductions, on his or her tax return.
 
 The exceptions do not apply to supplemental wages greater than $1,000,000. Basic instructions. If you are not exempt, complete the Personal Allowances Worksheet below. The worksheets on page 2 further adjust your withholding allowances based on itemized deductions, certain credits, adjustments to income, or two-earners/multiple jobs situations. Complete all worksheets that apply. However, you may claim fewer (or zero) allowances. For regular wages, withholding must be based on allowances you claimed and may not be a flat amount or percentage of wages. Head of household. Generally, you can claim head of household filing status on your tax return only if you are unmarried and pay more than 50% of the costs of keeping up a home for yourself and your dependent(s) or other qualifying individuals. See Pub. 501, Exemptions, Standard Deduction, and Filing Information, for information. Tax credits. You can take projected tax credits into account in figuring your allowable number of withholding allowances. Credits for child or dependent care expenses and the child tax credit may be claimed using the Personal Allowances Worksheet below. See Pub. 505 for information on converting your other credits into withholding allowances.
 
@@ -12,15 +12,15 @@ Personal Allowances Worksheet (Keep for your records.)
 
 A Enter "1" for yourself if no one else can claim you as a dependent . . . . . . . . . . . . . . . . . . A
 
-· You are single and have only one job; or
+ You are single and have only one job; or
 
 { }B Enter "1" if:
 
-· You are married, have only one job, and your spouse does not work; or
+ You are married, have only one job, and your spouse does not work; or
 
 ... B
 
-· Your wages from a second job or your spouse's wages (or the total of both) are $1,500 or less.
+ Your wages from a second job or your spouse's wages (or the total of both) are $1,500 or less.
 C Enter "1" for your spouse. But, you may choose to enter "-0-" if you are married and have either a working spouse or more than one job. (Entering "-0-" may help you avoid having too little tax withheld.) . . . . . . . . . . . . . . C
 
 D Enter number of dependents (other than your spouse or yourself) you will claim on your tax return . . . . . . . . D
@@ -31,22 +31,22 @@ F Enter "1" if you have at least $2,000 of child or dependent care expenses for 
 
 (Note. Do not include child support payments. See Pub. 503, Child and Dependent Care Expenses, for details.)
 
-G Child Tax Credit (including additional child tax credit). See Pub. 972, Child Tax Credit, for more information. · If your total income will be less than $65,000 ($95,000 if married), enter "2" for each eligible child; then less "1" if you have three to six eligible children or less "2" if you have seven or more eligible children.
+G Child Tax Credit (including additional child tax credit). See Pub. 972, Child Tax Credit, for more information.  If your total income will be less than $65,000 ($95,000 if married), enter "2" for each eligible child; then less "1" if you have three to six eligible children or less "2" if you have seven or more eligible children.
 
-· If your total income will be between $65,000 and $84,000 ($95,000 and $119,000 if married), enter "1" for each eligible child . . . G
+ If your total income will be between $65,000 and $84,000 ($95,000 and $119,000 if married), enter "1" for each eligible child . . . G
 
 {H Add lines A through G and enter total here. (Note. This may be different from the number of exemptions you claim on your tax return.)  H
 
 For accuracy, complete all worksheets
 
-· If you plan to itemize or claim adjustments to income and want to reduce your withholding, see the Deductions and Adjustments Worksheet on page 2.
-· If you are single and have more than one job or are married and you and your spouse both work and the combined earnings from all jobs exceed $50,000 ($20,000 if married), see the Two-Earners/Multiple Jobs Worksheet on page 2 to
+ If you plan to itemize or claim adjustments to income and want to reduce your withholding, see the Deductions and Adjustments Worksheet on page 2.
+ If you are single and have more than one job or are married and you and your spouse both work and the combined earnings from all jobs exceed $50,000 ($20,000 if married), see the Two-Earners/Multiple Jobs Worksheet on page 2 to
 
 that apply.
 
 avoid having too little tax withheld.
 
-· If neither of the above situations applies, stop here and enter the number from line H on line 5 of Form W-4 below.
+ If neither of the above situations applies, stop here and enter the number from line H on line 5 of Form W-4 below.
 
 Separate here and give Form W-4 to your employer. Keep the top part for your records.
 
@@ -85,9 +85,9 @@ check here. You must call 1-800-772-1213 for a replacement card.
 
 7 I claim exemption from withholding for 2014, and I certify that I meet both of the following conditions for exemption.
 
-· Last year I had a right to a refund of all federal income tax withheld because I had no tax liability, and
+ Last year I had a right to a refund of all federal income tax withheld because I had no tax liability, and
 
-· This year I expect a refund of all federal income tax withheld because I expect to have no tax liability.
+ This year I expect a refund of all federal income tax withheld because I expect to have no tax liability.
 
 If you meet both conditions, write "Exempt" here . . . . . . . . . . . . . . .  7 Under penalties of perjury, I declare that I have examined this certificate and, to the best of my knowledge and belief, it is true, correct, and complete.
 

@@ -49,11 +49,14 @@ def pdftotext(env)
 
   system(*command)
 
+  body = text.read.encode(Encoding::US_ASCII, universal_newline: true,
+    invalid: :replace, undef: :replace, replace: "")
+
   [200, {
     'Access-Control-Allow-Methods' => "POST,PUT",
     'Access-Control-Allow-Origin' => "*",
     'Content-Type' => "text/plain"
-  }, [text.read]]
+  }, [body]]
 ensure
   pdf.close if pdf
   text.close if text
