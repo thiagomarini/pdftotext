@@ -1,8 +1,29 @@
 require 'rack'
 require 'xpdf'
 
+VALID_METHODS = ['POST', 'PUT']
+VALID_ACCEPTS = [nil, '*/*', 'text/plain']
+VALID_CONTENT_TYPES = [nil, 'application/pdf']
+
 def pdftotext(env)
   req = Rack::Request.new(env)
+
+  if env['REQUEST_METHOD'] == 'OPTIONS'
+    return [204, {
+      'Access-Control-Allow-Methods' => "POST,PUT",
+      'Access-Control-Allow-Origin' => "*"
+    }, []]
+  elsif !VALID_METHODS.include?(env['REQUEST_METHOD'])
+    return [405, {}, []]
+  end
+
+  unless VALID_ACCEPTS.include?(env['HTTP_ACCEPT'])
+    return [406, {}, []]
+  end
+
+  unless VALID_CONTENT_TYPES.include?(env['CONTENT_TYPE'])
+    return [415, {}, []]
+  end
 
   pdf  = Tempfile.new(['pdftotext', '.pdf'])
   text = Tempfile.new(['pdftotext', '.txt'])
@@ -29,6 +50,7 @@ def pdftotext(env)
   system(*command)
 
   [200, {
+    'Access-Control-Allow-Methods' => "POST,PUT",
     'Access-Control-Allow-Origin' => "*",
     'Content-Type' => "text/plain"
   }, [text.read]]
