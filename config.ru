@@ -9,7 +9,7 @@ def pdftotext(env)
   req = Rack::Request.new(env)
 
   if env['REQUEST_METHOD'] == 'OPTIONS'
-    return [204, {
+    return [200, {
       'Access-Control-Allow-Origin' => "*",
       'Access-Control-Allow-Methods' => "POST, PUT, OPTIONS",
       'Access-Control-Request-Headers' => "Content-Type"

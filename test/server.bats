@@ -16,7 +16,7 @@ txt="$BATS_TEST_DIRNAME/fixtures/fw4.txt"
   [ "$status" -eq 0 ]
 
   code=$(echo ${lines[0]} | cut -d ' ' -f2)
-  [ "$code" = "204" ]
+  [ "$code" = "200" ]
 
   header=$(echo ${lines[1]} | cut -d ' ' -f1)
   [ "$header" = "Access-Control-Allow-Origin:" ]
