@@ -10,8 +10,9 @@ def pdftotext(env)
 
   if env['REQUEST_METHOD'] == 'OPTIONS'
     return [204, {
-      'Access-Control-Allow-Methods' => "POST,PUT",
-      'Access-Control-Allow-Origin' => "*"
+      'Access-Control-Allow-Origin' => "*",
+      'Access-Control-Allow-Methods' => "POST, PUT, OPTIONS",
+      'Access-Control-Request-Headers' => "Content-Type"
     }, []]
   elsif !VALID_METHODS.include?(env['REQUEST_METHOD'])
     return [405, {}, []]

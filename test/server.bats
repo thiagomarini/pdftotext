@@ -19,10 +19,13 @@ txt="$BATS_TEST_DIRNAME/fixtures/fw4.txt"
   [ "$code" = "204" ]
 
   header=$(echo ${lines[1]} | cut -d ' ' -f1)
-  [ "$header" = "Access-Control-Allow-Methods:" ]
+  [ "$header" = "Access-Control-Allow-Origin:" ]
 
   header=$(echo ${lines[2]} | cut -d ' ' -f1)
-  [ "$header" = "Access-Control-Allow-Origin:" ]
+  [ "$header" = "Access-Control-Allow-Methods:" ]
+
+  header=$(echo ${lines[3]} | cut -d ' ' -f1)
+  [ "$header" = "Access-Control-Request-Headers:" ]
 }
 
 @test "GET returns a 405" {
