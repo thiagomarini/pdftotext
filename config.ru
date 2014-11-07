@@ -5,15 +5,17 @@ VALID_METHODS = ['POST', 'PUT']
 VALID_ACCEPTS = [nil, '*/*', 'text/plain']
 VALID_CONTENT_TYPES = [nil, 'application/pdf']
 
+HEADERS = {
+  'Access-Control-Allow-Origin' => "*",
+  'Access-Control-Allow-Methods' => "POST, PUT, OPTIONS",
+  'Access-Control-Allow-Headers' => "Content-Type"
+}
+
 def pdftotext(env)
   req = Rack::Request.new(env)
 
   if env['REQUEST_METHOD'] == 'OPTIONS'
-    return [200, {
-      'Access-Control-Allow-Origin' => "*",
-      'Access-Control-Allow-Methods' => "POST, PUT, OPTIONS",
-      'Access-Control-Allow-Headers' => "Content-Type"
-    }, []]
+    return [200, HEADERS, []]
   elsif !VALID_METHODS.include?(env['REQUEST_METHOD'])
     return [405, {}, []]
   end
@@ -53,11 +55,7 @@ def pdftotext(env)
   body = text.read.encode(Encoding::US_ASCII, universal_newline: true,
     invalid: :replace, undef: :replace, replace: "")
 
-  [200, {
-    'Access-Control-Allow-Methods' => "POST,PUT",
-    'Access-Control-Allow-Origin' => "*",
-    'Content-Type' => "text/plain"
-  }, [body]]
+  [200, HEADERS.merge('Content-Type' => "text/plain"), [body]]
 ensure
   pdf.close if pdf
   text.close if text
