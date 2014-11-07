@@ -12,7 +12,7 @@ def pdftotext(env)
     return [200, {
       'Access-Control-Allow-Origin' => "*",
       'Access-Control-Allow-Methods' => "POST, PUT, OPTIONS",
-      'Access-Control-Request-Headers' => "Content-Type"
+      'Access-Control-Allow-Headers' => "Content-Type"
     }, []]
   elsif !VALID_METHODS.include?(env['REQUEST_METHOD'])
     return [405, {}, []]
