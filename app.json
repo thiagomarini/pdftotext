@@ -1,0 +1,5 @@
+{
+  "name": "pdftotext",
+  "description": "Simple web service for Xpdf's pdftotext command",
+  "repository": "https://github.com/josh/pdftotext"
+}
