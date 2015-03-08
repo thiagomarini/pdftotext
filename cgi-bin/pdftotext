@@ -1,0 +1,70 @@
+#!/bin/bash
+
+set -e
+set -o pipefail
+
+PATH="/app/bin:$PATH"
+
+print_cors_headers() {
+  printf "Access-Control-Allow-Origin: *\r\n"
+  printf "Access-Control-Allow-Methods: POST, PUT, OPTIONS\r\n"
+  printf "Access-Control-Allow-Headers: Content-Type\r\n"
+}
+
+if [ "$REQUEST_METHOD" == "OPTIONS" ]
+then
+  printf "Status: 204 No Content\r\n"
+  print_cors_headers
+  printf "\r\n"
+  exit
+fi
+
+if [ "$REQUEST_METHOD" != "POST" ] && [ "$REQUEST_METHOD" != "PUT" ]
+then
+  printf "Status: 405 Method Not Allowed\r\n"
+  print_cors_headers
+  printf "\r\n"
+  exit
+fi
+
+if [ -n "$HTTP_ACCEPT" ] && [ "$HTTP_ACCEPT" != "*/*" ] && [ "$HTTP_ACCEPT" != "text/plain" ]
+then
+  printf "Status: 406 Not Acceptable\r\n"
+  print_cors_headers
+  printf "\r\n"
+  exit
+fi
+
+if [ -n "$CONTENT_TYPE" ] && [ "$CONTENT_TYPE" != "application/pdf" ]
+then
+  printf "Status: 415 Unsupported Media Type\r\n"
+  printf "\r\n"
+  exit
+fi
+
+FLAGS=()
+
+IFS="&"
+set -- $QUERY_STRING
+qs=($@)
+
+for i in "${qs[@]}"
+do
+  IFS="="
+  set -- $i
+  case "$1" in
+    f|l|fixed|linespacing) FLAGS+=("-$1" $2) ;;
+    layout|table|lineprinter|raw|clip|nopgbrk|opw|upw) FLAGS+=("-$1") ;;
+    *) ;;
+  esac
+done
+
+printf "Status: 200 OK\r\n"
+printf "Content-Type: text/plain\r\n"
+print_cors_headers
+printf "\r\n"
+
+tmp="$(mktemp)"
+head -c "$CONTENT_LENGTH" > "$tmp"
+pdftotext "${FLAGS[@]}" "$tmp" "-"
+rm -f "$tmp"
