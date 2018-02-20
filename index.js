@@ -20,7 +20,17 @@ const handler = (event, context) =>
         "Content-Type": "text/plain"
       },
       body: text
-    }));
+    }))
+    .catch(error => {
+      console.error(error.message);
+      return {
+        statusCode: 500,
+        headers: {
+          "Content-Type": "text/plain"
+        },
+        body: ""
+      };
+    });
 
 const writeTmp = data => {
   const tmpPath = path.join(
