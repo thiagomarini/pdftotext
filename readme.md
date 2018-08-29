@@ -2,6 +2,8 @@
 
 AWS Lambda node.js function to read text from PDFs. It's configured to be integrated with API Gateway.
 
+[![CircleCI](https://circleci.com/gh/thiagomarini/pdftotext.svg?style=svg)](https://circleci.com/gh/thiagomarini/pdftotext)
+
 ## How it works
 
 The Lambda function receives the URL of the PDF, downloads it to `/tmp` and reads the PDFs from there and then executes the `pdftotext` binary file in the root.
