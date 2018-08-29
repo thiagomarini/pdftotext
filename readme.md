@@ -1,4 +1,4 @@
-# PDF to Text Service
+# PDF to Text Lambda Function
 
 AWS Nodejs Lambda function to read text from PDFs. It's configured to work behind API Gateway.
 
@@ -28,6 +28,8 @@ To invoke locally use `serverless invoke local -f pdfToText --log --path __tests
 `serverless deploy --stage <stage>`
 
 ## Testing
+
+It's configured to use [jest](https://jestjs.io/).
 
 A sample API Gateway event is in the `__tests__` folder.
 
