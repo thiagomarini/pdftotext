@@ -1,0 +1,30 @@
+service: pdftotext
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: ${opt:stage,'dev'}
+  region: eu-west-1
+  environment:
+    APP_NAME: pdftotext
+
+custom:
+  stages:
+    - dev
+    - prod
+  pythonRequirements:
+    dockerizePip: false
+
+functions:
+  pdfToText:
+    handler: handler.pdfToText
+    events:
+    - http:
+        path: /v1/pdftotext
+        method: post
+        cors: true
+
+
+plugins:
+  - serverless-stage-manager
+  - serverless-offline

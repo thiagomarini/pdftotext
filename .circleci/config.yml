@@ -1,0 +1,35 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: weengsteam/node8.1-serverless
+
+    working_directory: ~/pdftotext
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - dependencies-cache-{{ checksum "package.json" }}
+            - dependencies-cache
+      - save_cache:
+          paths:
+            - node_modules
+          key: dependencies-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install node dependencies
+          command: |
+            npm install
+      - run:
+          name: Run tests
+          command: |
+            npm run test
+      - deploy:
+          name: Deploy
+          command: |
+              if [ "${CIRCLE_BRANCH}" == "development" ]; then
+                # serverless deploy --stage dev
+              elif [ "${CIRCLE_BRANCH}" == "master" ]; then
+                # serverless deploy --stage prod
+              fi
+              echo 'DONE;'
