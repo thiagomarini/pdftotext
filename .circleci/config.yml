@@ -29,7 +29,8 @@ jobs:
           command: |
               if [ "${CIRCLE_BRANCH}" == "development" ]; then
                 # serverless deploy --stage dev
+                echo 'deployed to deveopment!'
               elif [ "${CIRCLE_BRANCH}" == "master" ]; then
                 # serverless deploy --stage prod
+                echo 'deployed to production!'
               fi
-              echo 'DONE;'

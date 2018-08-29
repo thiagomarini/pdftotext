@@ -1,14 +1,15 @@
 # PDF to Text Service
 
-AWS Lambda node.js function to read text from PDFs. It's configured to be integrated with API Gateway.
+AWS Nodejs Lambda function to read text from PDFs. It's configured to work behind API Gateway.
 
 [![CircleCI](https://circleci.com/gh/thiagomarini/pdftotext.svg?style=svg)](https://circleci.com/gh/thiagomarini/pdftotext)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## How it works
 
-The Lambda function receives the URL of the PDF, downloads it to `/tmp` and reads the PDFs from there and then executes the `pdftotext` binary file in the root.
+The Lambda function receives a POST request with the URL of the PDF, downloads it to `/tmp` and then executes the `pdftotext` binary file in the root to extract the PDF's text.
 
-For local development, tests and pipelines you need to install poppler `brew install poppler`.
+For local development, tests and pipelines you need to install poppler, run `brew install poppler` if using mac.
 
 ## How to use
 
